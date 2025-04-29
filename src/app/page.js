@@ -1,103 +1,306 @@
-import Image from "next/image";
 
-export default function Home() {
+
+'use client'; // Mark this file as a Client Component
+
+import React, { useEffect } from 'react';
+import styles from './styles/styles.module.css'//stilos CSS si los tienes
+import Image from 'next/image';
+import 'boxicons/css/boxicons.min.css';
+
+
+export default function HomePage() {
+  console.log(styles);
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+    <header className={styles.header}>
+    <div className={styles.carousel}>
+    <div className={styles.slides}>
+      <img src="/images/imagen1.jpg" alt="Imagen 1" />
+      <img src="/images/imagen2.jpg" alt="Imagen 2" />
+      <img src="/images/imagen3.jpg" alt="Imagen 3" />
+    </div>
+    </div>
+    </header>
+    <header>
+      <nav className={styles.navbar}>
+          <div className={styles.logo}>
+            <a href="#" className={styles.logo}>
+              <i className="bx bxs-bus bx-lg bx-tada"></i> Transportes Novelli
+            </a>
+          </div>
+          <ul className={styles.navlinks}>
+            <li className={styles.navitem}>
+              <a href="#Nosotros">Nosotros</a>
+            </li>
+            <li className={styles.navitem}>
+              <a href="#Servicios">Servicios</a>
+            </li>
+            <li className={styles.navitem}>
+              <a href="#Vehiculos">Vehiculos</a>
+            </li>
+            <li className={styles.navitem}>
+              <a href="#Clientes">Clientes</a>
+            </li>
+            <li className={styles.navitem}>
+              <a href="#Contacto">Contacto</a>
+            </li>
+            <li className={styles.navitem}>
+              <a href="#Redes">Redes</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <hr width="100%" />
+      <main>
+        <div id="Nosotros">
+          <section>
+            <h4>Nosotros</h4>
+            <p>Somos una empresa fundada desde 1979 con la finalidad de satisfacer las necesidades del mercado en el área de servicios de transporte de pasajeros.</p>
+            <p>Tres generaciones al servicio de la sociedad.</p>
+            <p>Disponemos de Vehículos de distintas capacidades, según su necesidad, totalmente equipadas y cumpliendo con la reglamentación vigente.</p>
+            <p>Contamos con personal capacitado y con amplia experiencia.</p>
+            <p>Atención personal realizada por sus Dueños.</p>
+            <p>Más de 35 años de experiencia.</p>
+            <br />
+            <p>
+              • MISIÓN <br />
+              Nuestro enfoque principal es ofrecer soluciones inmediatas a nuestros clientes diariamente, de manera eficiente, responsable y manteniendo el compromiso de brindar un excelente servicio.<br />
+              • VISIÓN <br />
+              Buscamos consolidarnos como la empresa líder en el mercado de transporte, brindando un mejor servicio cada día, estableciendo alianzas estratégicas, comprometiéndonos con las necesidades del cliente y orientándonos hacia un servicio cada vez más integral que nos permita alcanzar un reconocido prestigio.<br />
+              • VALORES <br />
+              Nuestros valores: Confianza, Respeto, Compromiso y Responsabilidad.
+            </p>
+          </section>
+        </div>
+        <hr width="100%" />
+        <div id="Servicios">
+          <section>
+            <h4>Servicios</h4>
+            <p>Nos especializamos en brindar servicios tales como:</p>
+            <ul>
+              <li>Viajes (Corta - Media - Larga distancia)</li>
+              <li>Excursiones</li>
+              <li>Campamentos</li>
+              <li>Cumpleaños</li>
+              <li>City Tours</li>
+              <li>Traslados de Planteles Deportivos</li>
+              <li>Colegios</li>
+              <li>Centro de Jubilados</li>
+              <li>Universidades</li>
+              <li>Instituciones</li>
+              <li>Sindicatos</li>
+            </ul>
+          </section>
+        </div>
+        <hr width="100%" />
+<div id="Vehiculos">
+  <section>
+    <h4>Nuestros Vehículos</h4>
+    <div className={styles.Vehiculos}>
+      <div>
+        <img src="/images/imagen1.jpg" alt="imagen1" />
+      </div>
+      <div>
+        <img src="/images/imagen2.jpg" alt="imagen2" />
+      </div>
+      <div>
+        <img src="/images/imagen3.jpg" alt="imagen3" />
+      </div>
+      <div>
+        <img src="/images/imagen4.jpg" alt="imagen4" />
+      </div>
+      <div>
+        <img src="/images/imagen5.jpg" alt="imagen5" />
+      </div>
+      <div>
+        <img src="/images/imagen6.jpg" alt="imagen6" />
+      </div>
+    </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className={styles.DescripcionVehiculos}>
+      <p>
+        • Unidades de 45/49 Asientos <br />
+        • Aire Acondicionado <br />
+        • Telefonía Celular en flota <br />
+        • Música Funcional <br />
+        • Habilitadas por el organismo de contralor <br />
+        • Verificación técnica vehicular al día <br />
+        • Seguro Automotor obligatorio <br />
+        • Cumplimentando con la Reglamentación vigente de Normas de Seguridad
+      </p>
+    </div>
+  </section>
+</div>              
+              
+       <hr width="100%" />
+        <div id="Clientes">
+          <section>
+            <h4>Nuestros Clientes</h4>
+            <ul>
+              <li>Belgrano Athletic Club</li>
+              <li>BBVA Banco Francés</li>
+              <li>Colegio Rio de la Plata</li>
+              <li>Asociacion del Poder Legislativo</li>
+              <li>Centro de Jubilados</li>
+              <li>Gobierno de la Ciudad de Bs As</li>
+              <li>Fundación Democracia</li>
+              <li>Escuela N°6 D.E. 10</li>
+              <li>Escuela N°7 D.E. 10</li>
+              <li>Escuela N°13 D.E. 10</li>
+              <li>Escuela N°15 D.E. 10</li>
+              <p>………..entre otros………..</p>
+            </ul>
+          </section>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <hr width="100%" />
+<footer className={styles.footer}>
+  <div className={styles.footerContent}>
+    <div id="Contacto" className={styles.contacto}>
+      {/* Formulario de contacto */}
+      <div className={styles.formulario}>
+        <form>
+          <h4>Formulario de Contacto</h4>
+          <br />
+          <label htmlFor="Nombre">
+            <input type="text" id="Nombre" placeholder="Nombre" />
+          </label>
+          <br />
+          <label htmlFor="Apellido">
+            <input type="text" id="Apellido" placeholder="Apellido" />
+          </label>
+          <br />
+          <label htmlFor="Edad">
+            <input type="number" id="Edad" placeholder="Edad" />
+          </label>
+          <br />
+          <label htmlFor="Genero">Genero:</label>
+          <br />
+          <input type="radio" name="Genero" value="Masculino" defaultChecked />
+          Masculino
+          <br />
+          <input type="radio" name="Genero" value="Femenino" />
+          Femenino
+          <br />
+          <input type="radio" name="Genero" value="Otro" />
+          Otro
+          <br />
+          <label htmlFor="Nacionalidad">Nacionalidad:</label>
+          <br />
+          <select name="nacionalidad" id="Nacionalidad">
+            <option value="Argentina">Argentina</option>
+            <option value="Brasilera">Brasilera</option>
+            <option value="Uruguaya">Uruguaya</option>
+          </select>
+          <br />
+          <label htmlFor="email">
+            <br />
+            <input type="email" id="email" placeholder="E-mail" />
+          </label>
+          <br />
+          <label htmlFor="Observaciones">
+            Observaciones:
+            <br />
+            <textarea id="Observaciones" placeholder="Agrega tu comentario o consulta"></textarea>
+          </label>
+          <br />
+          <br />
+          <input type="submit" id="button" value="Enviar" />
+        </form>
+      </div>
     </div>
+
+    <div id="Ubicacion" className={styles.ubicacion}>
+      {/* Tarjeta de ubicación */}
+      <div className={styles.ubicacionCard}>
+        <figure className={styles.card}>
+          <h4>Ubicacion</h4>
+          <figcaption>
+            <ul className={styles['card-data']}>
+              <li>
+                <span className={styles['card-data-titles-position']}>
+                  Boulogne Sur Mer 2610, B1650-Villa Maipu
+                </span>
+              </li>
+            </ul>
+          </figcaption>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.984833674104!2d-58.55388032341717!3d-34.6023574729876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb61c921318c5%3A0x2dd44cb01c51f80f!2sBoulogne%20Sur%20Mer%202610%2C%20B1650%20Villa%20Maip%C3%BA%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1683979384389!5m2!1ses-419!2sar"
+            width="600"
+            height="450"
+            style={{ border: 0 }}
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </figure>
+      </div>
+
+      /*<figure className={styles['card-flex']}>
+        <img
+          src="/images/imagen tarjeta meteorologica footer.png"
+          alt="imagen parcialmente nublado"
+          className={styles['card-image']}
+        />
+        <figcaption>
+          <ul className={styles['card-data-flex']}>
+            <li>
+              <span className={styles['card-data-titles']}>Temperatura:</span> 22ºC
+            </li>
+            <li>
+              <span className={styles['card-data-titles']}>Humedad:</span> 60%
+            </li>
+            <li>
+              <span className={styles['card-data-titles']}>Nubosidad:</span> 20%
+            </li>
+          </ul>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div id="Redes" className={styles.redes}>
+      {/* Redes Sociales */}
+      <figure className={styles['Redes-card']}>
+        <h4>Redes</h4>
+        <nav className={styles.Redes}>
+          <ul className={styles.Redeslink}>
+            <li className={styles.Reditem}>
+              <a href="#">
+                <i className="bx bxl-facebook-square"></i> Facebook
+              </a>
+            </li>
+            <li className={styles.Reditem}>
+              <a href="#">
+                <i className="bx bxl-instagram-alt"></i> Instagram
+              </a>
+            </li>
+            <li className={styles.Reditem}>
+              <a href="https://wa.me/5491169438573">
+                <i className="bx bxl-whatsapp-square bx-mg bx-tada"></i> 11-6943-8573
+              </a>
+            </li>
+            <li className={styles.Reditem}>
+              <a href="mailto:transportenovelli@gmail.com">
+                <i className="bx bxs-envelope"></i> transportenovelli@gmail.com
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </figure>
+
+      <div id="Volver a Inicio" className={styles.volverInicio}>
+        <nav className={styles.Volver}>
+          <ul className={styles.Volverlink}>
+            <li className={styles.Volveritem}>
+              <a href="#">Volver a Inicio</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
+</>
   );
 }
+
