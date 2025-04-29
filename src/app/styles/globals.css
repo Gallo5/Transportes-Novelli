@@ -1,447 +1,508 @@
-@import "tailwindcss";
-
 
 /* Fuente Google font */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  /*Dimensiones, Incorporacion de imagen y color de fondo del encabezado*/
-  .header {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*.header {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}*/
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  animation: slide 10s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Animación */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33%  { transform: translateX(-100%); }
+  66%  { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* Dimensiones, imagen y fondo del encabezado*/
+.header {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  z-index: 100;
+}
+
+.headerContent {
+  position: relative; /* Para que esté encima de la imagen */
+  z-index: 2;
+  text-align: center;
+  color: white;
+}
+
+.headerTitle {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.headerSubtitle {
+  font-size: 1.5rem;
+}
+
+
+/*.header {
   top: 0;
   width: 100%;
-  background-image: url(/public/images/imagen7.jpg), linear-gradient(to right, #0A0434,#226F76, #206570);
-  background-repeat: no-repeat; background-attachment: scroll; background-position: center;
+  background-image: linear-gradient(to right, #0A0434, #226F76, #206570), url('/images/imagen7.jpg');
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
   background-size: cover;
   z-index: 100;
   height: 90vh;
-  }
+}*/
 
-   
-  /* estilos flex */
-  /* Estilos básicos para la barra de navegación */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 90px;
-    padding: 20px;
-    background-image: linear-gradient(to right, #ff8e0e,#be6e13, ORANGE, YELLOW); 
-    position: fixed; /* Fija la barra de navegación en la parte superior */
-    top: 0;
-  }
-    
-  /* Estilos para el logo */
-  .logo a {
-    width: 180px; /* Ajusta el tamaño del logo según sea necesario */
-    padding: 0 20px;
-    font-size: 30px;
-    color: aliceblue;
-    font-weight: bolder;
-    text-decoration: none;
-    animation: 'tada';
-  }
-    
-  
-  /* Estilos para los enlaces de navegación */
-  .navlinks {
-    display: flex;
-    margin-right: 50px;
-    list-style: none;
-    font-size: 18px;
-    color: white;
-    text-decoration: none;
-    transition: .3s;
-  }
-  
-  .navlinks a:hover {
-    color: rgb(42, 34, 88);
-  }
-    
-  .navitem a {
-    font-size: 20px;
-    font-weight: bolder;
-    margin: 20px;
-    text-decoration: none;
-    color: white
-  }
-  
-  /*Cambio de tamaño, color y subrayado del titulo h3*/ 
-  h3 {
+.body-background {
+  background-color: lightgray;
+}
+
+/* Estilos navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 90px;
+  padding: 20px;
+  background-image: linear-gradient(to right, #b61212, #ff8e0e, #be6e13, orange);
+  position: fixed;
+  top: 0;
+}
+
+/* Logo */
+.logo a {
+  width: 180px;
+  padding: 0 20px;
+  font-size: 30px;
+  color: aliceblue;
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+/* Enlaces navegación */
+.navlinks {
+  display: flex;
+  margin-right: 50px;
+  list-style: none;
+  font-size: 18px;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: white;
+  transition: .3s;
+}
+
+.navlinks a:hover {
+  color: rgb(42, 34, 88);
+}
+
+.navitem a {
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 20px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Títulos y texto */
+h3 {
   display: block;
   font-weight: black;
-  font-family: Sedan !important;
-  font-size: 45px ;
-  text-decoration: underline; 
+  font-family: Sedan, sans-serif !important;
+  font-size: 45px;
+  text-decoration: underline;
   color: #226F76;
   margin-left: 20px;
   margin-top: 90px;
   padding: 10px;
-  } 
-  
-  /*Cambio de tamaño y subrayado de los titutlos h4 del cuerpo principal*/
-  main h4 {
-    font-style: oblique;
-    font-size: 25px;
-    text-decoration: underline;
+}
+
+main h4,
+footer h4 {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+#Inicio,
+#Nosotros,
+#Servicios,
+#Vehiculos,
+#Clientes {
+  color: aliceblue;
+  padding: 20px;
+  line-height: 30px;
+}
+
+#Inicio {
+  background-image: linear-gradient(to right, #ff8e0e, #be6e13, orange);
+}
+
+#Nosotros,
+#Vehiculos {
+  background-image: linear-gradient(to right, #b61212, #be6e13);
+}
+
+#Servicios {   
+  background-image: linear-gradient(to right, #ff8e0e, orange, #b61212);
+  color: black;
+}
+
+
+#Servicios ul {
+  display: flex; /* convierte la lista en horizontal */
+  flex-wrap: wrap; /* para que se pasen a otra línea si no caben */
+  gap: 20px; /* espacio entre los ítems */
+  padding: 0;
+  list-style: none; /* opcional: quita las viñetas */
+}
+
+#Servicios p {
+  font-size: 25px;
+  text-decoration: underline;
+}
+#Servicios ul li {
+  font-size: 25px;
+}
+
+#Servicios {
+  background-image: linear-gradient(to right, #ff8e0e, orange);
+  color: black;
+  padding: 40px;
+}
+
+#Servicios ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+
+#Servicios ul li {
+  background-color: #be6e13; /* fondo rojizo suave tipo alerta "ligera" */
+  border-left: 6px solid #c62828; /* rojo intenso para contraste */
+  border-radius: 12px;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 200px;
+  max-width: 250px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#Servicios ul li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+#Clientes {
+  background-image: linear-gradient(to right, #ff8e0e, #be6e13, orange);
+  font-family: 'Trebuchet MS', sans-serif !important;
+}
+
+p,
+ol>li,
+ul>li {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+/* Vehículos (Galería) 
+.Vehiculos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 10px;
+}*/
+
+/* Vehículos (Galería) */
+.Vehiculos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.Vehiculos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Descripción debajo de las imágenes */
+.DescripcionVehiculos {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 800px;
+  text-align: left;
+}
+
+/* Footer */
+.footer {
+  background-image: linear-gradient(to right, #b61212, grey);
+  padding: 20px;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between; /* Espacios iguales entre las secciones */
+  flex-wrap: wrap; /* Hace que los elementos se apilen en pantallas pequeñas */
+  gap: 20px; /* Espacio entre los elementos */
+}
+.contacto, .ubicacion, .redes {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Formulario */
+.Formulario {
+  width: 300px;
+  margin-left: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: inset black;
+  box-shadow: 20px 20px 20px black;
+}
+
+label,
+input[type=text],
+input[type=number],
+input[type=email],
+textarea {
+  width: 100%;
+  font-size: 20px;
+}
+
+textarea {
+  min-height: 100px;
+  max-height: 200px;
+  max-width: 100%;
+}
+
+#button {
+  background-color: black;
+  color: aliceblue;
+  width: 160px;
+  height: 50px;
+}
+
+/* Tarjetas ubicación */
+.Ubicacion {
+  margin-bottom: 40px;
+}
+
+.card {
+  height: 300px;
+  width: 400px;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px black;
+}
+
+.card h4 {
+  padding: 10px;
+}
+
+figcaption ul li {
+  margin-bottom: 3px;
+  font-size: medium;
+  text-align: start;
+}
+
+.card-data {
+  list-style: none;
+  color: white;
+}
+
+.card-data-titles-position {
+  color: black;
+  font-weight: bold;
+  font-size: larger;
+}
+
+iframe {
+  height: 175px;
+  width: 390px;
+  object-fit: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/* Tarjetas meteorología */
+.card-flex {
+  height: 180px;
+  width: 400px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: black;
+  box-shadow: 5px 5px 10px black;
+  display: flex;
+}
+
+.card-data-flex {
+  list-style: none;
+  color: white;
+  padding: 10px;
+}
+
+.card-image {
+  height: 175px;
+  width: 220px;
+  object-fit: cover;
+}
+
+.card-data-titles {
+  color: lightblue;
+}
+
+.card-data-nombre1 {
+  color: white;
+}
+
+/* Redes Sociales */
+.Redes-card {
+  width: 400px;
+  height: 300px;
+  margin-left: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: inset black;
+  box-shadow: 20px 20px 20px black;
+}
+
+.Redes {
+  justify-content: left;
+  align-items: start;
+  width: 100%;
+  padding: 0;
+}
+
+.Redeslink {
+  margin-right: 0;
+  list-style: none;
+  transition: .3s;
+}
+
+.Redeslink a:hover {
+  color: chartreuse;
+}
+
+.Reditem a {
+  font-size: 20px;
+  font-weight: bolder;
+  margin: 0;
+  color: white;
+  text-decoration: none;
+}
+
+/* Volver a Inicio */
+.Volver {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 170px;
+}
+
+.Volverlink {
+  list-style: none;
+  transition: .5s;
+}
+
+.Volverlink a:hover {
+  color: chartreuse;
+}
+
+.Volveritem a {
+  font-size: 25px;
+  font-weight: bolder;
+  color: black;
+  text-decoration: none;
+}
+
+/* Scroll automático para anclas */
+:target {
+  scroll-margin-top: 90px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+  h3 {
+    display: none;
   }
-  
-  /*Cambio de tamaño de fuente en parrafos y listas*/
-  #Inicio, p {font-size: 20px;}
-  
-  ol>li {
-    font-size: 20px;
-    margin-left: 20px;
+  header {
+    background-size: contain;
+    height: auto;
   }
-  
-  ul>li {
-    font-size: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-  
-  /*Dimensiones y Cambio del color de fondo de la Seccion Inicio*/ 
-  #Inicio {
-    color: aliceblue;
-    background-image: linear-gradient(to right,#ff8e0e,#be6e13, ORANGE);
-    padding: 20px;
-    line-height: 30px;
-  }
-  
-  p {margin-top: 20px;}
-  
-  
-  /*Dimensiones y Cambio del color de fondo de la Seccion Nosotros*/ 
-  #Nosotros {
-    color: aliceblue;
-    background-image: linear-gradient(to right, #0A0434,#226F76);
-    padding: 20px;
-    line-height: 30px;
-  }
-        
-  p {margin-top: 20px;}
-  
-  
-  /*Dimensiones y Cambio del color de fondo de la Seccion Noticias*/ 
-  #Servicios {
-    color: aliceblue;
-    background-image: linear-gradient(to right,#ff8e0e,ORANGE);
-    padding: 20px;
-    line-height: 30px;
-  }
-        
-  p {margin-top: 20px;}
-  
-  /*Dimensiones y Cambio del color de fondo de la Seccion Clubes*/ 
-  #Vehiculos {
-    color: aliceblue;
-    background-image: linear-gradient(to right,  #0A0434,#226F76);
-    padding: 20px;
-    line-height: 30px;
-  }
-  
-  p {margin-top: 20px;}
-   
-  .Vehiculos{
+}
+
+@media screen and (max-width: 760px) {
+  .galeria {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas en cada fila */
-    grid-template-rows: repeat(2, auto);
-    grid-gap: 10px; /* Espacio entre las imágenes */
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, auto);
+    grid-gap: 10px;
   }
-   
-  
-  
-  /*Dimensiones y Cambio de color y familia texto calendario */
-  #Clientes { 
-    color: aliceblue;
-    background-image: linear-gradient(to right, #ff8e0e,#be6e13, ORANGE);
-    padding: 20px;
-    font-family: 'Trebuchet MS'!important;
-    line-height: 30px;
+  .galeria-item {
+    width: 100%;
   }
-  
-  .Clientes, ol>li {
-    font-size: 20px;
-    margin-left: 20px;
-    margin-top: 20px;
+  .galeria-item img {
+    width: 100%;
+    height: auto;
   }
-  
-  /* Cambio de color fondo del footer (parte inferior o pie) */
   .footer {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;         
-      background-color: grey;
-      padding: 10px;
-      column-gap: 30px;
+    grid-template-columns: 1fr;
   }
-  
-  /*Cambio de la fuente, tamaño y subrayado de los titutlos h4 de la parte inferior o pie*/
-  footer h4 {
-    font-style: initial;
-    font-size: 20px;
-    text-decoration: underline;
-    padding: 0;
-  }
-  
-  /*Estilo del formulario*/
-  .Formulario {
-      width: 300px;
-      margin-left: 40px;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 20px 20px;
-      box-sizing: border-box;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      border: inset;
-      border-color: black;
-      box-shadow: 20px 20px 20px;
-    }
-  
-  label {
-      width: 100% ;
-      font-size: 20px;
-  }
-  
-  input[type=text] {
-      width: 100%;
-      font-size: 20px;
-  }
-  
-  input[type=number] {
-    width: 100%;
-    font-size: 20px;
-  }
-  
-  input[type=email] {
-    width: 100%;
-    font-size: 20px;
-  }
-  
-  textarea {
-      min-height: 100px;
-      max-height: 200px;
-      max-width: 100%;
-  }
-  
-  #button {
-    background-color: black;
-    color: aliceblue;
-    width: 160px;
-    height: 50px;
-  }  
-  
-  /* Margen inferior de la tarjeta ubicacion */
-  .Ubicacion  {
-    margin-bottom: 40px;
-  }
-  
-  /* Dimensiones de la tarjeta ubicacion */
-  .card {
-    height: 300px;
-    width: 400px;
-    border: 2px solid black;
-    border-radius: 5px;
-    box-shadow: 5px 5px 10px black;
-  }
-  
-  /* Relleno del titulo de la tarjeta ubicacion */
-  .card h4 {
-    padding: 10px;
-  }
-  
-  /* Espaciado del texto de la tarjeta */
-  figcaption ul li {
-    margin-bottom: 0;
-  }
-  
-  /* Estilo del texto de la tarjetas ubicacion */
-  .card-data {
-    list-style: none;
-    color: white;
-  }
-  
-  /* Color del texto de la tarjeta ubicacion */
-  .card-data-titles-position {
-    color: black;
-    font-weight: bold;
-    font-size: larger; 
-  }
-  
-  /* Dimensiones de la imagen de la tarjeta ubicacion */
-  iframe {
-    height: 175px;
-    width: 390px;
-    object-fit: center;
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  /* Dimenciones y estilo de la tarjeta meteorologica */
-  .card-flex {
-    height: 180px;
-    width: 400px;
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: black;
-    box-shadow: 5px 5px 10px black;
-    display: flex;
-  }
-  
-  /* Estilo del texto de la tarjeta meteorologica */
-  .card-data-flex {
-    list-style: none;
-    color: white;
-    padding: 10px;
-  }
-  
-  /* Dimensiones de la imagen de la tarjeta meteorologica */
-  .card-image {
-    height: 175px;
-    width: 220px;
-    object-fit: cover;
-  }
-  
-  /* Espaciado del texto de la tarjeta meteorologica */
-  figcaption ul li {
-    margin-bottom: 3px;
-    font-size: medium;
-    text-align: start;
-  }
-  
-  /* Estilo del texto de la tarjeta meteorologica */
-  .card-data {
-    list-style: none;
-    color: white;
-  }
-  
-  /* Color del texto de la tarjeta meteorologica */
-  .card-data-titles {
-    color: lightblue;
-  }
-  
-  /* Color del nombre de la tarjeta meteorologica */
-  .card-data-nombre1 {
-    color: white;
-  }
-  
-  /* Dimensiones y estilo tarjeta Redes */
   .Redes-card {
-    width: 400px;
-    height: 300px;
-    margin-left: 20px;
-    background: rgba(0, 0, 0, 0.2);
-    padding: 20px 20px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border: inset;
-    border-color: black;
-    box-shadow: 20px 20px 20px;
+    margin-top: 30px;
+    margin-left: 0;
   }
-  
-  /*Ubicacion de los enlaces para redes sociales*/
-  .Redes {
-    justify-content: left;
-    align-items: start;
-    width: 100%;
-    padding: 0;
+  .Volver {
+    margin-bottom: 30px;
   }
-  
-  .Redeslink {
-    margin-right: 0;
-    list-style: none;
-    transition: .3s;
-  }
-  
-  .Redeslink a:hover {
-    color: chartreuse;
-  }
-  
-  /*Estilos de los enlaces para redes sociales*/
-  .Reditem a {
-    font-size: 20px;
-    font-weight: bolder;
-    margin: 0;
-    color: white;
-    text-decoration: none;
-  }
-  
-  /*Ubicacion del enlace para volver a Inicio*/
-  .Volver {   
-    width: 100%;
-    padding: 20px;
-    margin-bottom: 210px;
-    margin-right: 0;
-  }
-  
-  .Volverlink{   
-    list-style: none;
-    transition: .5s;
-  }
-  
-  .Volverlink a:hover {
-    color: chartreuse;
-  }
-  
-  /*Estilo del enlace para Volver a Inicio*/
-  .Volveritem a {
-    font-size: 25px;
-    font-weight: bolder;
-    color: black;
-    text-decoration: none;
-  }
-  
-  /* Altura del encabezado fijo */
-  :target {
-    scroll-margin-top: 90px; 
-  }
-  
-  /* Responsividad h3 en pantallas menores de 480px */
-  @media screen and (max-width: 480px) {
-    h3 {
-      display: none;
-    }
-  
-     header {
-      background-size: contain; /* Ajusta el tamaño de la imagen para que quepa completamente */
-      height: auto; /* Permite que la altura se ajuste automáticamente al contenido */
-    }
-  }
-  
-  /* Responsividad del titulo h3 header, galeria de fotos y footer */
-  @media screen and (max-width: 760px) {
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(1, 1fr); /* 1 columna en cada fila */
-      grid-template-rows: repeat(6, auto); /* 6 filas */
-      grid-gap: 10px; /* Espacio entre las imágenes */
-    }
-  
-    .galeria-item {
-      width: 100%; /* Ancho completo para que las imágenes ocupen todo el espacio disponible */
-    }
-  
-    .galeria-item img {
-      width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
-      height: auto; /* Altura automática para mantener la proporción */
-    }
-  
-    .footer { 
-      grid-template-columns: repeat(1, 1fr);
-    }
-  
-    .Redes-card {
-      margin-top: 30px;
-      margin-left: 0;
-    }
-  
-    .Volver {
-      margin-bottom: 30px;
-    }
-  }
-  
-  
+}
+
+
