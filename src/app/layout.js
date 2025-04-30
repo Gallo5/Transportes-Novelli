@@ -2,7 +2,6 @@
 // layout.js
 
 import { Roboto } from 'next/font/google'; // Ejemplo de importación de fuente
-import './styles/styles.module.css'//stilos CSS si los tienes
 import 'boxicons/css/boxicons.min.css';
 import './styles/globals.css'
 
