@@ -1,10 +1,17 @@
 
-/*.header {
+/* Estilos para el header con carrusel */
+.header {
   width: 100%;
-  height: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  z-index: 100;
   position: relative;
-}*/
+}
 
 .carousel {
   position: relative;
@@ -27,7 +34,6 @@
   object-position: center top;
 }
 
-/* Animación */
 @keyframes slide {
   0% { transform: translateX(0); }
   33%  { transform: translateX(-100%); }
@@ -35,21 +41,8 @@
   100% { transform: translateX(0); }
 }
 
-/* Dimensiones, imagen y fondo del encabezado*/
-.header {
-  width: 100%;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center; 
-  overflow: hidden;
-  background-position: center;
-  background-size: cover;
-  z-index: 100;
-}
-
 .headerContent {
-  position: relative; /* Para que esté encima de la imagen */
+  position: relative;
   z-index: 2;
   text-align: center;
   color: white;
@@ -64,24 +57,11 @@
   font-size: 1.5rem;
 }
 
-
-/*.header {
-  top: 0;
-  width: 100%;
-  background-image: linear-gradient(to right, #0A0434, #226F76, #206570), url('/images/imagen7.jpg');
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  background-position: center;
-  background-size: cover;
-  z-index: 100;
-  height: 90vh;
-}*/
-
 .body-background {
   background-color: lightgray;
 }
 
-/* Estilos navbar */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -94,7 +74,6 @@
   top: 0;
 }
 
-/* Logo */
 .logo a {
   width: 180px;
   padding: 0 20px;
@@ -104,7 +83,6 @@
   text-decoration: none;
 }
 
-/* Enlaces navegación */
 .navlinks {
   display: flex;
   margin-right: 50px;
@@ -112,26 +90,24 @@
   font-size: 18px;
 }
 
-.navlinks a {
+.navlinks a,
+.navitem a {
   text-decoration: none;
   color: white;
   transition: .3s;
-}
-
-.navlinks a:hover {
-  color: rgb(42, 34, 88);
-}
-
-.navitem a {
-  font-size: 20px;
   font-weight: bolder;
   margin: 20px;
-  text-decoration: none;
-  color: white;
+  font-size: 20px;
 }
 
-/* Títulos y texto */
-:global(h3) {
+.navlinks a:hover,
+.Volverlink a:hover,
+.Redeslink a:hover {
+  color: chartreuse;
+}
+
+/* Secciones principales */
+.tituloGlobal :global(h3) {
   display: block;
   font-weight: black;
   font-family: Sedan, sans-serif !important;
@@ -143,60 +119,44 @@
   padding: 10px;
 }
 
-:global(main h4),
-:global(footer h4) {
+.tituloSecundario :global(main h4),
+.tituloSecundario :global(footer h4) {
   font-size: 25px;
   text-decoration: underline;
 }
 
-:global(#Inicio),
-:global(#Nosotros),
-:global(#Servicios),
-:global(#Vehiculos),
-:global(#Clientes) {
-  color: aliceblue;
+.inicioGlobal :global(#Inicio),
+.nosotrosGlobal :global(#Nosotros),
+.serviciosGlobal :global(#Servicios),
+.vehiculosGlobal :global(#Vehiculos),
+.clientesGlobal :global(#Clientes) {
   padding: 20px;
   line-height: 30px;
 }
 
-:global(#Inicio) {
+.inicioGlobal :global(#Inicio) {
   background-image: linear-gradient(to right, #ff8e0e, #be6e13, orange);
+  color: aliceblue;
 }
 
-:global(#Nosotros),
-:global(#Vehiculos) {
+.nosotrosGlobal :global(#Nosotros),
+.vehiculosGlobal :global(#Vehiculos) {
   background-image: linear-gradient(to right, #b61212, #be6e13);
+  color: aliceblue;
 }
 
-:global(#Servicios) {   
-  background-image: linear-gradient(to right, #ff8e0e, orange, #b61212);
-  color: black;
-}
-
-
-:global(#Servicios ul) {
-  display: flex; /* convierte la lista en horizontal */
-  flex-wrap: wrap; /* para que se pasen a otra línea si no caben */
-  gap: 20px; /* espacio entre los ítems */
-  padding: 0;
-  list-style: none; /* opcional: quita las viñetas */
-}
-
-:global(#Servicios p) {
-  font-size: 25px;
-  text-decoration: underline;
-}
-:global(#Servicios ul li) {
-  font-size: 25px;
-}
-
-:global(#Servicios) {
+.serviciosGlobal :global(#Servicios) {
   background-image: linear-gradient(to right, #ff8e0e, orange);
   color: black;
   padding: 40px;
 }
 
-:global(#Servicios ul) {
+.serviciosGlobal :global(#Servicios p) {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.serviciosGlobal :global(#Servicios ul) {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -205,9 +165,9 @@
   list-style: none;
 }
 
-:global(#Servicios ul li) {
-  background-color: #be6e13; /* fondo rojizo suave tipo alerta "ligera" */
-  border-left: 6px solid #c62828; /* rojo intenso para contraste */
+.serviciosGlobal :global(#Servicios ul li) {
+  background-color: #be6e13;
+  border-left: 6px solid #c62828;
   border-radius: 12px;
   padding: 20px;
   font-size: 18px;
@@ -219,34 +179,25 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-:global(#Servicios ul li:hover) {
+.serviciosGlobal :global(#Servicios ul li:hover) {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-
-:global(#Clientes) {
+.clientesGlobal :global(#Clientes) {
   background-image: linear-gradient(to right, #ff8e0e, #be6e13, orange);
   font-family: 'Trebuchet MS', sans-serif !important;
+  color: aliceblue;
 }
 
-:global(p),
-:global(ol>li),
-:global(ul>li) {
+.textoGlobal :global(p),
+.textoGlobal :global(ol>li),
+.textoGlobal :global(ul>li) {
   font-size: 20px;
   margin-top: 20px;
   margin-left: 20px;
 }
 
-/* Vehículos (Galería) 
-.Vehiculos {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(2, auto);
-  grid-gap: 10px;
-}*/
-
-/* Vehículos (Galería) */
 .Vehiculos {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -261,7 +212,6 @@
   border-radius: 8px;
 }
 
-/* Descripción debajo de las imágenes */
 .DescripcionVehiculos {
   font-size: 1rem;
   line-height: 1.5;
@@ -270,7 +220,6 @@
   text-align: left;
 }
 
-/* Footer */
 .footer {
   background-image: linear-gradient(to right, #b61212, grey);
   padding: 20px;
@@ -278,16 +227,16 @@
 
 .footerContent {
   display: flex;
-  justify-content: space-between; /* Espacios iguales entre las secciones */
-  flex-wrap: wrap; /* Hace que los elementos se apilen en pantallas pequeñas */
-  gap: 20px; /* Espacio entre los elementos */
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
+
 .contacto, .ubicacion, .redes {
   flex: 1;
   min-width: 300px;
 }
 
-/* Formulario */
 .Formulario {
   width: 300px;
   margin-left: 40px;
@@ -321,7 +270,6 @@
   height: 50px;
 }
 
-/* Tarjetas ubicación */
 .Ubicacion {
   margin-bottom: 40px;
 }
@@ -363,7 +311,6 @@
   margin-bottom: 20px;
 }
 
-/* Tarjetas meteorología */
 .card-flex {
   height: 180px;
   width: 400px;
@@ -394,7 +341,6 @@
   color: white;
 }
 
-/* Redes Sociales */
 .Redes-card {
   width: 400px;
   height: 300px;
@@ -420,10 +366,6 @@
   transition: .3s;
 }
 
-.Redeslink a:hover {
-  color: chartreuse;
-}
-
 .Reditem a {
   font-size: 20px;
   font-weight: bolder;
@@ -432,7 +374,6 @@
   text-decoration: none;
 }
 
-/* Volver a Inicio */
 .Volver {
   width: 100%;
   padding: 20px;
@@ -444,10 +385,6 @@
   transition: .5s;
 }
 
-.Volverlink a:hover {
-  color: chartreuse;
-}
-
 .Volveritem a {
   font-size: 25px;
   font-weight: bolder;
@@ -455,17 +392,15 @@
   text-decoration: none;
 }
 
-/* Scroll automático para anclas */
 :global(:target) {
   scroll-margin-top: 90px;
 }
 
-/* Media Queries */
 @media screen and (max-width: 480px) {
-  :global(h3) {
+  .tituloGlobal :global(h3) {
     display: none;
   }
-  :global(header) {
+  .header {
     background-size: contain;
     height: auto;
   }
