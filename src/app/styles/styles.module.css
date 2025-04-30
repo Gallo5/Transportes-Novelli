@@ -392,7 +392,7 @@
   text-decoration: none;
 }
 
-:global(:target) {
+.targetGlobal:global(:target) {
   scroll-margin-top: 90px;
 }
 
