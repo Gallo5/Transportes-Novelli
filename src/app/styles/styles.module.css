@@ -248,16 +248,16 @@
   box-shadow: 20px 20px 20px black;
 }
 
-:global(label),
-:global(input[type=text]),
-:global(input[type=number]),
-:global(input[type=email]),
-:global(textarea) {
+.labelGlobal:global(label),
+.imputGobal:global(input[type=text]),
+.imputGlobal:global(input[type=number]),
+.imputGlobal:global(input[type=email]),
+.imputGlobal:global(textarea) {
   width: 100%;
   font-size: 20px;
 }
 
-:global(textarea) {
+.textareaGlobal:global(textarea) {
   min-height: 100px;
   max-height: 200px;
   max-width: 100%;
@@ -286,7 +286,7 @@
   padding: 10px;
 }
 
-:global(figcaption ul li) {
+.figcaptionGlobal:global(figcaption ul li) {
   margin-bottom: 3px;
   font-size: medium;
   text-align: start;
@@ -303,7 +303,7 @@
   font-size: larger;
 }
 
-:global(iframe) {
+.iframeGlobal:global(iframe) {
   height: 175px;
   width: 390px;
   object-fit: center;
