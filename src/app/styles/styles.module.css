@@ -19,6 +19,7 @@
   background-size: cover;
   z-index: 100;
   position: relative;
+  margin-top: 90px; /* para empujar el carrusel debajo de la navbar fija */
 }
 
 .carousel {
@@ -112,7 +113,7 @@
 .navlinks a:hover,
 .Volverlink a:hover,
 .Redeslink a:hover {
-  color: chartreuse;
+  color:#b61212;
 }
 
 /* Secciones principales */
@@ -155,7 +156,7 @@
 }
 
 .serviciosGlobal :global(#Servicios) {
-  background-image: linear-gradient(to right, #ff8e0e, orange);
+  background-image: linear-gradient(to right, #ff8e0e, orange, #b61212);
   color: black;
   padding: 40px;
 }
