@@ -1,4 +1,12 @@
 
+/* Fuente Google font */
+:global(*) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
 /* Estilos para el header con carrusel */
 .header {
   width: 100%;
@@ -72,6 +80,7 @@
   background-image: linear-gradient(to right, #b61212, #ff8e0e, #be6e13, orange);
   position: fixed;
   top: 0;
+  z-index: 999; /* <-- AÑADIDO */
 }
 
 .logo a {

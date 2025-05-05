@@ -3,6 +3,7 @@
 
 import { Roboto } from 'next/font/google'; // Ejemplo de importación de fuente
 import 'boxicons/css/boxicons.min.css';
+import './styles/styles.module.css'
 import './styles/globals.css'
 
 
