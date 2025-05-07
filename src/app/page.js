@@ -235,28 +235,9 @@ export default function HomePage() {
           ></iframe>
         </figure>
       </div>
+      </div>
 
-      /*<figure className={styles['card-flex']}>
-        <img
-          src="/images/imagen tarjeta meteorologica footer.png"
-          alt="imagen parcialmente nublado"
-          className={styles['card-image']}
-        />
-        <figcaption>
-          <ul className={styles['card-data-flex']}>
-            <li>
-              <span className={styles['card-data-titles']}>Temperatura:</span> 22ºC
-            </li>
-            <li>
-              <span className={styles['card-data-titles']}>Humedad:</span> 60%
-            </li>
-            <li>
-              <span className={styles['card-data-titles']}>Nubosidad:</span> 20%
-            </li>
-          </ul>
-        </figcaption>
-      </figure>
-    </div>
+      
 
     <div id="Redes" className={styles.redes}>
       {/* Redes Sociales */}
