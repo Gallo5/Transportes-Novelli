@@ -1,34 +1,19 @@
 
 // layout.js
 
-import { Roboto } from 'next/font/google'; // Ejemplo de importación de fuente
-import 'boxicons/css/boxicons.min.css';
-import './styles/styles.module.css'
-import './styles/globals.css'
+// src/app/layout.js
+import './globals.css';
+import styles from './styles/styles.module.css';
 
-
-const roboto = Roboto({
-  weight: ['400', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
-
-
-// Metadata del sitio
 export const metadata = {
-  title: "Transportes Novelli",
-  description: "Empresa de transporte de pasajeros desde 1979",
+  title: 'Transportes Novelli',
+  description: 'Tu socio confiable en logística',
 };
 
-// RootLayout definido correctamente
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={roboto.className}>
-      <body>{children}</body>
+    <html lang="es">
+      <body className={styles.body}>{children}</body>
     </html>
   );
 }
-
-
-
-

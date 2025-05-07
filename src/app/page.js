@@ -22,7 +22,7 @@ export default function HomePage() {
     </div>
     </header>
     <header>
-      <nav className={styles.navbar}>
+        <nav className={styles.navbar}>
           <div className={styles.logo}>
             <a href="#" className={styles.logo}>
               <i className="bx bxs-bus bx-lg bx-tada"></i> Transportes Novelli
