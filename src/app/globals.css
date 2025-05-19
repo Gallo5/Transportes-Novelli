@@ -9,6 +9,7 @@ body {
   font-family: sans-serif;
   background-color: #fff;
   color: #333;
+  overflow-x: hidden;
 }
 
 /* Agrega aquí más estilos generales si los tienes */
@@ -24,21 +25,24 @@ body {
   position: relative;
   width: 100%;
   height: 90vh;
+  max-height: 600px;  
   overflow: hidden;
+  margin-top: 90px; /* Ajuste para compensar la navbar fija */
 }
 
 .slides {
   display: flex;
-  width: 100%;
-  height: 100%;
-  animation: slide 10s infinite;
+  width: 300%;
+  height: 90%;
+  animation: slide 12s infinite;
 }
 
 .slides img {
   width: 100%;
-  height: 100%;
+  height: 90%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center;
+  flex: 0 0 100%;
 }
 
 /* Animación */
@@ -60,6 +64,7 @@ body {
   background-position: center;
   background-size: cover;
   z-index: 100;
+  padding-top: 90px; /* misma altura que la navbar */
 }
 
 .headerContent {
@@ -86,7 +91,7 @@ body {
   background-attachment: scroll;
   background-position: center;
   background-size: cover;
-  z-index: 100;
+  z-index: 100%;
   height: 90vh;
 }
 
@@ -170,6 +175,7 @@ footer h4 {
   color: aliceblue;
   padding: 20px;
   line-height: 30px;
+  padding-top: 90px;
 }
 
 #Inicio {
@@ -180,6 +186,7 @@ footer h4 {
 #Vehiculos {
   background-image: linear-gradient(to right, #b61212, #be6e13);
 }
+
 
 #Servicios {   
   background-image: linear-gradient(to right, #ff8e0e, orange, #b61212);
@@ -206,6 +213,8 @@ footer h4 {
   background-image: linear-gradient(to right, #ff8e0e, orange);
   color: black;
   padding: 40px;
+  height: 90vh;
+  padding-top: 90px;
 }
 
 #Servicios ul {
@@ -372,8 +381,8 @@ iframe {
   object-fit: cover;
 }
 
-.card-data-titles {
-  color: lightblue;
+.card-data-titles-position {
+  color: black;
 }
 
 .card-data-nombre1 {

@@ -56,8 +56,8 @@ export default function HomePage() {
           <section>
             <h4>Nosotros</h4>
             <p>Somos una empresa fundada desde 1979 con la finalidad de satisfacer las necesidades del mercado en el área de servicios de transporte de pasajeros.</p>
-            <p>Tres generaciones al servicio de la sociedad.</p>
-            <p>Disponemos de Vehículos de distintas capacidades, según su necesidad, totalmente equipadas y cumpliendo con la reglamentación vigente.</p>
+            <p>Tres generaciones al servicio del transporte de pasajeros.</p>
+            <p>Disponemos de Vehículos de distintas capacidades según su necesidad, totalmente equipadas y cumpliendo con la reglamentación vigente.</p>
             <p>Contamos con personal capacitado y con amplia experiencia.</p>
             <p>Atención personal realizada por sus Dueños.</p>
             <p>Más de 35 años de experiencia.</p>
@@ -236,9 +236,7 @@ export default function HomePage() {
         </figure>
       </div>
       </div>
-
-      
-
+     
     <div id="Redes" className={styles.redes}>
       {/* Redes Sociales */}
       <figure className={styles['Redes-card']}>
@@ -251,8 +249,8 @@ export default function HomePage() {
               </a>
             </li>
             <li className={styles.Reditem}>
-              <a href="#">
-                <i className="bx bxl-instagram-alt"></i> Instagram
+              <a href="https://www.instagram.com/transportenovelli" target="_blank">
+                <i className="bx bxl-instagram-alt"></i>@transportenovelli
               </a>
             </li>
             <li className={styles.Reditem}>
@@ -262,7 +260,7 @@ export default function HomePage() {
             </li>
             <li className={styles.Reditem}>
               <a href="mailto:transportenovelli@gmail.com">
-                <i className="bx bxs-envelope"></i> transportenovelli@gmail.com
+                <i className="bx bxs-envelope"></i>transportenovelli@gmail.com
               </a>
             </li>
           </ul>
