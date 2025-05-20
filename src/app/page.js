@@ -15,9 +15,9 @@ export default function HomePage() {
     <header className={styles.header}>
     <div className={styles.carousel}>
     <div className={styles.slides}>
-      <img src="/images/imagen1.jpg" alt="Imagen 1" />
-      <img src="/images/imagen2.jpg" alt="Imagen 2" />
       <img src="/images/imagen3.jpg" alt="Imagen 3" />
+      <img src="/images/imagen7.jpg" alt="Imagen 7" />
+      <img src="/images/imagen8.jpg" alt="Imagen 8" />
     </div>
     </div>
     </header>
