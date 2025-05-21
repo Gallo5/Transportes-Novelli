@@ -2,24 +2,49 @@
 
 'use client'; // Mark this file as a Client Component
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect }  from 'react';
 import styles from './styles/styles.module.css'//stilos CSS si los tienes
 import Image from 'next/image';
 import 'boxicons/css/boxicons.min.css';
 
+const images = [
+  '/images/imagen1.jpg',
+  '/images/imagen2.jpg',
+  '/images/imagen3.jpg'
+];
 
 export default function HomePage() {
-  console.log(styles);
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <>
     <header className={styles.header}>
-    <div className={styles.carousel}>
-    <div className={styles.slides}>
-      <img src="/images/imagen1.jpg" alt="Imagen 1" />
-      <img src="/images/imagen2.jpg" alt="Imagen 2" />
-      <img src="/images/imagen3.jpg" alt="Imagen 3" />
-    </div>
-    </div>
+      <div className={styles.carousel}>
+        {images.map((src, index) => (
+          <div
+            key={index}
+            className={`${styles.slide} ${index === current ? styles.active : ''}`}
+          >
+            <img src={src} alt={`Imagen ${index + 1}`} />
+          </div>
+        ))}
+
+        <button className={styles.prev} onClick={prevSlide}>&#10094;</button>
+        <button className={styles.next} onClick={nextSlide}>&#10095;</button>
+      </div>
     </header>
     <header>
         <nav className={styles.navbar}>
@@ -98,12 +123,6 @@ export default function HomePage() {
     <h4>Nuestros Vehículos</h4>
     <div className={styles.Vehiculos}>
       <div>
-        <img src="/images/imagen1.jpg" alt="imagen1" />
-      </div>
-      <div>
-        <img src="/images/imagen2.jpg" alt="imagen2" />
-      </div>
-      <div>
         <img src="/images/imagen3.jpg" alt="imagen3" />
       </div>
       <div>
@@ -114,6 +133,12 @@ export default function HomePage() {
       </div>
       <div>
         <img src="/images/imagen6.jpg" alt="imagen6" />
+      </div>
+      <div>
+        <img src="/images/imagen7.jpg" alt="imagen7" />
+      </div>
+      <div>
+        <img src="/images/imagen8.jpg" alt="imagen8" />
       </div>
     </div>
 

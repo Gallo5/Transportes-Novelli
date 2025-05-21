@@ -21,38 +21,10 @@ body {
   position: relative;
 }*/
 
-.carousel {
-  position: relative;
-  width: 100%;
-  height: 90vh;
-  overflow: hidden;
-  margin-top: 90px; /* Ajuste para compensar la navbar fija */
-}
 
-.slides {
-  display: flex;
-  width: 300%;
-  height: 100%;
-  animation: slide 12s infinite;
-}
-
-.slides img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  flex: 0 0 100%;
-}
-
-/* Animación */
-@keyframes slide {
-  0% { transform: translateX(0); }
-  33%  { transform: translateX(-100%); }
-  66%  { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
-}
 
 /* Dimensiones, imagen y fondo del encabezado*/
+
 .header {
   width: 100%;
   height: 90vh;
