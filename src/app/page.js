@@ -136,6 +136,7 @@ export default function HomePage() {
         <div id="Clientes">
           <section>
             <h4>Nuestros Clientes</h4>
+            <p>Trabajamos con las siguientes empresas e instituciones las cuales avalan nuestro servicio, responsabilidad y trayectoria:</p>
             <ul>
               <li>Belgrano Athletic Club</li>
               <li>BBVA Banco Francés</li>
