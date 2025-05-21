@@ -18,7 +18,6 @@ export default function HomePage() {
       <img src="/images/imagen1.jpg" alt="Imagen 1" />
       <img src="/images/imagen2.jpg" alt="Imagen 2" />
       <img src="/images/imagen3.jpg" alt="Imagen 3" />
-      <img src="/images/imagen1.jpg" alt="Imagen 1 repetida para transición suave" />
     </div>
     </div>
     </header>
