@@ -16,6 +16,8 @@ const images = [
 export default function HomePage() {
   const [current, setCurrent] = useState(0);
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const nextSlide = () => {
     setCurrent((prev) => (prev + 1) % images.length);
   };
@@ -46,34 +48,33 @@ export default function HomePage() {
         <button className={styles.next} onClick={nextSlide}>&#10095;</button>
       </div>
     </header>
-    <header>
+    <header>      
         <nav className={styles.navbar}>
-          <div className={styles.logo}>
-            <a href="#" className={styles.logo}>
-              <i className="bx bxs-bus bx-lg bx-tada"></i> Transportes Novelli
-            </a>
-          </div>
-          <ul className={styles.navlinks}>
-            <li className={styles.navitem}>
-              <a href="#Nosotros">Nosotros</a>
-            </li>
-            <li className={styles.navitem}>
-              <a href="#Servicios">Servicios</a>
-            </li>
-            <li className={styles.navitem}>
-              <a href="#Vehiculos">Vehiculos</a>
-            </li>
-            <li className={styles.navitem}>
-              <a href="#Clientes">Clientes</a>
-            </li>
-            <li className={styles.navitem}>
-              <a href="#Contacto">Contacto</a>
-            </li>
-            <li className={styles.navitem}>
-              <a href="#Redes">Redes</a>
-            </li>
-          </ul>
-        </nav>
+  <div className={styles.logo}>
+    <a href="#">
+      <i className="bx bxs-bus bx-lg bx-tada"></i> <span>Transportes Novelli</span>
+    </a>
+  </div>
+
+  {/* Botón hamburguesa */}
+  <button
+    className={styles.hamburger}
+    onClick={() => setMenuOpen(!menuOpen)}
+    aria-label="Menú"
+  >
+    <i className="bx bx-menu"></i>
+  </button>
+
+  {/* Menú colapsable para móviles */}
+  <ul className={`${styles.navlinks} ${menuOpen ? styles.open : ''}`}>
+    <li className={styles.navitem}><a href="#Nosotros">Nosotros</a></li>
+    <li className={styles.navitem}><a href="#Servicios">Servicios</a></li>
+    <li className={styles.navitem}><a href="#Vehiculos">Vehiculos</a></li>
+    <li className={styles.navitem}><a href="#Clientes">Clientes</a></li>
+    <li className={styles.navitem}><a href="#Contacto">Contacto</a></li>
+    <li className={styles.navitem}><a href="#Redes">Redes</a></li>
+  </ul>
+</nav>
       </header>
       <hr width="100%" />
       <main>
