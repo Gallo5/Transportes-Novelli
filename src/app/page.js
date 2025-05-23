@@ -91,7 +91,7 @@ export default function HomePage() {
             <p>Disponemos de Vehículos de distintas capacidades según su necesidad, totalmente equipadas y cumpliendo con la reglamentación vigente.</p>
             <p>Contamos con personal capacitado y con amplia experiencia.</p>
             <p>Atención personal realizada por sus Dueños.</p>
-            <p>Más de 35 años de experiencia.</p>
+            <p>Más de 46 años de experiencia.</p>
             <br />
             </div>
             <div className="TarjetaNosotros">
