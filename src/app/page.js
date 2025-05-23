@@ -64,16 +64,20 @@ export default function HomePage() {
   >
     <i className="bx bx-menu"></i>
   </button>
-
+   
   {/* Menú colapsable para móviles */}
   <ul className={`${styles.navlinks} ${menuOpen ? styles.open : ''}`}>
-    <li className={styles.navitem}><a href="#Nosotros">Nosotros</a></li>
-    <li className={styles.navitem}><a href="#Servicios">Servicios</a></li>
-    <li className={styles.navitem}><a href="#Vehiculos">Vehiculos</a></li>
-    <li className={styles.navitem}><a href="#Clientes">Clientes</a></li>
-    <li className={styles.navitem}><a href="#Contacto">Contacto</a></li>
-    <li className={styles.navitem}><a href="#Redes">Redes</a></li>
-  </ul>
+  {['Nosotros', 'Servicios', 'Vehiculos', 'Clientes', 'Contacto', 'Redes'].map((item) => (
+    <li key={item} className={styles.navitem}>
+      <a
+        href={`#${item}`}
+        onClick={() => setMenuOpen(false)} // Cierra menú al hacer clic
+      >
+        {item}
+      </a>
+    </li>
+  ))}
+</ul>
 </nav>
       </header>
       <hr width="100%" />
@@ -81,6 +85,7 @@ export default function HomePage() {
         <div id="Nosotros">
           <section>
             <h4>Nosotros</h4>
+            <div className="TarjetaNosotros">
             <p>Somos una empresa fundada desde 1979 con la finalidad de satisfacer las necesidades del mercado en el área de servicios de transporte de pasajeros.</p>
             <p>Tres generaciones al servicio del transporte de pasajeros.</p>
             <p>Disponemos de Vehículos de distintas capacidades según su necesidad, totalmente equipadas y cumpliendo con la reglamentación vigente.</p>
@@ -88,6 +93,8 @@ export default function HomePage() {
             <p>Atención personal realizada por sus Dueños.</p>
             <p>Más de 35 años de experiencia.</p>
             <br />
+            </div>
+            <div className="TarjetaNosotros">
             <p>
               • MISIÓN <br />
               Nuestro enfoque principal es ofrecer soluciones inmediatas a nuestros clientes diariamente, de manera eficiente, responsable y manteniendo el compromiso de brindar un excelente servicio.<br />
@@ -96,6 +103,7 @@ export default function HomePage() {
               • VALORES <br />
               Nuestros valores: Confianza, Respeto, Compromiso y Responsabilidad.
             </p>
+            </div>
           </section>
         </div>
         <hr width="100%" />
@@ -236,7 +244,6 @@ export default function HomePage() {
         </form>
       </div>
     </div>
-
     <div id="Ubicacion" className={styles.ubicacion}>
       {/* Tarjeta de ubicación */}
       <div className={styles.ubicacionCard}>
@@ -262,8 +269,7 @@ export default function HomePage() {
           ></iframe>
         </figure>
       </div>
-      </div>
-     
+      </div>     
     <div id="Redes" className={styles.redes}>
       {/* Redes Sociales */}
       <figure className={styles['Redes-card']}>
@@ -293,7 +299,6 @@ export default function HomePage() {
           </ul>
         </nav>
       </figure>
-
       <div id="Volver a Inicio" className={styles.volverInicio}>
         <nav className={styles.Volver}>
           <ul className={styles.Volverlink}>
